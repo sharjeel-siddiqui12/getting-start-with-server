@@ -1,16 +1,22 @@
-import express from 'express'
+import express from 'express';
+import path from 'path';
+
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5001
 
-app.get('/water', (req, res) => {
-  console.log(`${req.ip} is asking for water`)
-  res.send('Here is some water for you')
+app.get('/weather', (req, res) => {
+  console.log(`${req.ip} is asking for weather`)
+  res.send({
+    city: "karachi",
+    temp_c: 26
+  })
 })
 
-app.get('/food', (req, res) => {
-  console.log(`${req.ip} is asking for food`)
-  res.send('Here is some food for you')
-})
+const __dirname = path.resolve();
+
+app.use('/', express.static(path.join(__dirname, "/web/index.html")))
+app.use('/', express.static(path.join(__dirname, "/web")))
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
