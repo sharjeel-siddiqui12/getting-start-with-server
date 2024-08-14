@@ -3,7 +3,7 @@ import path from 'path';
 import cors from 'cors'
 import mongoose from 'mongoose';
 
-const dbUri =  'mongodb+srv://user123:user123@cluster0.bbbw2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
 mongoose.connect(dbUri)
 
 
