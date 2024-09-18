@@ -8,11 +8,6 @@ if (url.split(":")[0] === 'https') {
     baseUrl = 'http://localhost:5001';
 }
 
-
-
-
-
-
 let addProduct = () => {
 
     let name = document.querySelector("#name").value
@@ -70,7 +65,7 @@ let getAllProducts = () => {
                         <p>${eachProduct.price} </p>
                         <p>${eachProduct.category} </p>
                         <p>${eachProduct.description} </p>
-                        <button onclick="deleteProduct('${eachProduct._id}')">delete </button>
+                        <button class="btn" onclick="deleteProduct('${eachProduct._id}')">delete </button>
                     </div>
                     `
             })
